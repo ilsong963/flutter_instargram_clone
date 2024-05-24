@@ -5,6 +5,6 @@ class ReelsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('reels Screen');
+    return const Text('reels Screen');
   }
 }

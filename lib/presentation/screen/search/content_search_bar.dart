@@ -13,7 +13,7 @@ class ContentSearchBar extends StatelessWidget {
         decoration: InputDecoration(
           hintText: 'Search',
           contentPadding: const EdgeInsets.all(0),
-          prefixIcon: Icon(Icons.search),
+          prefixIcon: const Icon(Icons.search),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
           ),

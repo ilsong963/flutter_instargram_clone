@@ -5,6 +5,6 @@ class PostScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('post Screen');
+    return const Text('post Screen');
   }
 }

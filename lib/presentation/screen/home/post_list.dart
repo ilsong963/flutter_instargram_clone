@@ -7,7 +7,7 @@ class PostList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    List<Widget> postList = List.generate(5, (index) => PostItem());
+    List<Widget> postList = List.generate(5, (index) => const PostItem());
 
     return Column(
       children:postList,

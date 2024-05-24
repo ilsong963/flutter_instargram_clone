@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_instargram_clone/presentation/screen/home/post_Item.dart';
 import 'package:flutter_instargram_clone/presentation/screen/home/post_list.dart';
 import 'package:flutter_instargram_clone/presentation/screen/home/story_list.dart';
 
@@ -18,7 +16,7 @@ class HomeScreen extends StatelessWidget {
 
 
 
-        ListView ( children: [
+        ListView ( children: const [
          StoryList(),
           PostList(),
 
