@@ -1,11 +1,17 @@
-
 import 'package:flutter/material.dart';
+
+import 'content_grid.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Text('search Screen');
+    return Column(
+      children: [
+        SearchBar(),
+        ContentGrid(),
+      ],
+    );
   }
 }
