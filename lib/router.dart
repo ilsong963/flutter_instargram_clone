@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_instargram_clone/presentation/bottom_nav_bar.dart';
 import 'package:flutter_instargram_clone/presentation/screen/home/home_screen.dart';
 import 'package:flutter_instargram_clone/presentation/screen/post_screen.dart';
-import 'package:flutter_instargram_clone/presentation/screen/profile_screen.dart';
+import 'package:flutter_instargram_clone/presentation/screen/profile/profile_screen.dart';
 import 'package:flutter_instargram_clone/presentation/screen/reels_screen.dart';
 import 'package:flutter_instargram_clone/presentation/screen/search/search_screen.dart';
 import 'package:go_router/go_router.dart';
