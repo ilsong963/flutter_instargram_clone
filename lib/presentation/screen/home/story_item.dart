@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_instargram_clone/model/story_model.dart';
 
-class StoryItem extends StatelessWidget {
-  const StoryItem({super.key, required this.id, required this.imageUrl});
+class StoryItemView extends StatelessWidget {
+  const StoryItemView({super.key, required this.story});
 
-  final String id;
-  final String imageUrl;
+  final StoryModel story;
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,12 @@ class StoryItem extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: Colors.white,
                   image: DecorationImage(
-                    image: NetworkImage(imageUrl),
+                    image: NetworkImage(story.imageUrl),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
-              Text(id)
+              Text(story.id)
             ],
           ),
         ));

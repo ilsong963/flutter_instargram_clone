@@ -21,7 +21,7 @@ final GoRouter router = GoRouter(
       },
       routes: [
         // This screen is displayed on the ShellRoute's Navigator.
-        GoRoute(path: '/home', pageBuilder: (context, state) => const NoTransitionPage(child: HomeScreen())),
+        GoRoute(path: '/home', pageBuilder: (context, state) =>  NoTransitionPage(child: HomeScreen())),
         GoRoute(path: '/search', pageBuilder: (context, state) => const NoTransitionPage(child: SearchScreen())),
         GoRoute(path: '/post', pageBuilder: (context, state) => const NoTransitionPage(child: PostScreen())),
         GoRoute(path: '/reels', pageBuilder: (context, state) => const NoTransitionPage(child: ReelsScreen())),
