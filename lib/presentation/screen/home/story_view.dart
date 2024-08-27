@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_instargram_clone/presentation/screen/home/story_item.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../provider/story_provider.dart';
 
-import '../../provider/story_list_provider.dart';
 
-
-class StoryListView extends ConsumerWidget {
-  const StoryListView({super.key});
+class StoryView extends ConsumerWidget {
+  const StoryView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final stories = ref.watch(storyListProvider);
+    final storyList = ref.watch(storyProvider);
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: switch (stories) {
+      child: switch (storyList) {
         AsyncData(:final value) => Row(
               children: List.generate(
             value.length,

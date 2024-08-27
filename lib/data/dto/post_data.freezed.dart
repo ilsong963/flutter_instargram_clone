@@ -20,14 +20,25 @@ PostData _$PostDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PostData {
-  String get profileImageUrl => throw _privateConstructorUsedError;
-  String get postImageUrl => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get likeCount => throw _privateConstructorUsedError;
-  String get commentCount => throw _privateConstructorUsedError;
-  String get date => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_name')
+  String get userName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_profile')
+  String get userProfile => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_following')
+  bool get isFollowing => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_like')
   bool get isLike => throw _privateConstructorUsedError;
-  bool get isFollow => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_saved')
+  bool get isSaved => throw _privateConstructorUsedError;
+  int get like => throw _privateConstructorUsedError;
+  @JsonKey(name: 'post_image')
+  String get postImage => throw _privateConstructorUsedError;
+  @JsonKey(name: 'post_content')
+  String get postContent => throw _privateConstructorUsedError;
+  @JsonKey(name: 'post_comment_count')
+  int get postCommentCount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'post_date')
+  DateTime get postDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,14 +52,16 @@ abstract class $PostDataCopyWith<$Res> {
       _$PostDataCopyWithImpl<$Res, PostData>;
   @useResult
   $Res call(
-      {String profileImageUrl,
-      String postImageUrl,
-      String name,
-      String likeCount,
-      String commentCount,
-      String date,
-      bool isLike,
-      bool isFollow});
+      {@JsonKey(name: 'user_name') String userName,
+      @JsonKey(name: 'user_profile') String userProfile,
+      @JsonKey(name: 'is_following') bool isFollowing,
+      @JsonKey(name: 'is_like') bool isLike,
+      @JsonKey(name: 'is_saved') bool isSaved,
+      int like,
+      @JsonKey(name: 'post_image') String postImage,
+      @JsonKey(name: 'post_content') String postContent,
+      @JsonKey(name: 'post_comment_count') int postCommentCount,
+      @JsonKey(name: 'post_date') DateTime postDate});
 }
 
 /// @nodoc
@@ -64,48 +77,58 @@ class _$PostDataCopyWithImpl<$Res, $Val extends PostData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? profileImageUrl = null,
-    Object? postImageUrl = null,
-    Object? name = null,
-    Object? likeCount = null,
-    Object? commentCount = null,
-    Object? date = null,
+    Object? userName = null,
+    Object? userProfile = null,
+    Object? isFollowing = null,
     Object? isLike = null,
-    Object? isFollow = null,
+    Object? isSaved = null,
+    Object? like = null,
+    Object? postImage = null,
+    Object? postContent = null,
+    Object? postCommentCount = null,
+    Object? postDate = null,
   }) {
     return _then(_value.copyWith(
-      profileImageUrl: null == profileImageUrl
-          ? _value.profileImageUrl
-          : profileImageUrl // ignore: cast_nullable_to_non_nullable
+      userName: null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
               as String,
-      postImageUrl: null == postImageUrl
-          ? _value.postImageUrl
-          : postImageUrl // ignore: cast_nullable_to_non_nullable
+      userProfile: null == userProfile
+          ? _value.userProfile
+          : userProfile // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      likeCount: null == likeCount
-          ? _value.likeCount
-          : likeCount // ignore: cast_nullable_to_non_nullable
-              as String,
-      commentCount: null == commentCount
-          ? _value.commentCount
-          : commentCount // ignore: cast_nullable_to_non_nullable
-              as String,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
+      isFollowing: null == isFollowing
+          ? _value.isFollowing
+          : isFollowing // ignore: cast_nullable_to_non_nullable
+              as bool,
       isLike: null == isLike
           ? _value.isLike
           : isLike // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFollow: null == isFollow
-          ? _value.isFollow
-          : isFollow // ignore: cast_nullable_to_non_nullable
+      isSaved: null == isSaved
+          ? _value.isSaved
+          : isSaved // ignore: cast_nullable_to_non_nullable
               as bool,
+      like: null == like
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int,
+      postImage: null == postImage
+          ? _value.postImage
+          : postImage // ignore: cast_nullable_to_non_nullable
+              as String,
+      postContent: null == postContent
+          ? _value.postContent
+          : postContent // ignore: cast_nullable_to_non_nullable
+              as String,
+      postCommentCount: null == postCommentCount
+          ? _value.postCommentCount
+          : postCommentCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      postDate: null == postDate
+          ? _value.postDate
+          : postDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -119,14 +142,16 @@ abstract class _$$PostDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String profileImageUrl,
-      String postImageUrl,
-      String name,
-      String likeCount,
-      String commentCount,
-      String date,
-      bool isLike,
-      bool isFollow});
+      {@JsonKey(name: 'user_name') String userName,
+      @JsonKey(name: 'user_profile') String userProfile,
+      @JsonKey(name: 'is_following') bool isFollowing,
+      @JsonKey(name: 'is_like') bool isLike,
+      @JsonKey(name: 'is_saved') bool isSaved,
+      int like,
+      @JsonKey(name: 'post_image') String postImage,
+      @JsonKey(name: 'post_content') String postContent,
+      @JsonKey(name: 'post_comment_count') int postCommentCount,
+      @JsonKey(name: 'post_date') DateTime postDate});
 }
 
 /// @nodoc
@@ -140,48 +165,58 @@ class __$$PostDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? profileImageUrl = null,
-    Object? postImageUrl = null,
-    Object? name = null,
-    Object? likeCount = null,
-    Object? commentCount = null,
-    Object? date = null,
+    Object? userName = null,
+    Object? userProfile = null,
+    Object? isFollowing = null,
     Object? isLike = null,
-    Object? isFollow = null,
+    Object? isSaved = null,
+    Object? like = null,
+    Object? postImage = null,
+    Object? postContent = null,
+    Object? postCommentCount = null,
+    Object? postDate = null,
   }) {
     return _then(_$PostDataImpl(
-      profileImageUrl: null == profileImageUrl
-          ? _value.profileImageUrl
-          : profileImageUrl // ignore: cast_nullable_to_non_nullable
+      userName: null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
               as String,
-      postImageUrl: null == postImageUrl
-          ? _value.postImageUrl
-          : postImageUrl // ignore: cast_nullable_to_non_nullable
+      userProfile: null == userProfile
+          ? _value.userProfile
+          : userProfile // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      likeCount: null == likeCount
-          ? _value.likeCount
-          : likeCount // ignore: cast_nullable_to_non_nullable
-              as String,
-      commentCount: null == commentCount
-          ? _value.commentCount
-          : commentCount // ignore: cast_nullable_to_non_nullable
-              as String,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
+      isFollowing: null == isFollowing
+          ? _value.isFollowing
+          : isFollowing // ignore: cast_nullable_to_non_nullable
+              as bool,
       isLike: null == isLike
           ? _value.isLike
           : isLike // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFollow: null == isFollow
-          ? _value.isFollow
-          : isFollow // ignore: cast_nullable_to_non_nullable
+      isSaved: null == isSaved
+          ? _value.isSaved
+          : isSaved // ignore: cast_nullable_to_non_nullable
               as bool,
+      like: null == like
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int,
+      postImage: null == postImage
+          ? _value.postImage
+          : postImage // ignore: cast_nullable_to_non_nullable
+              as String,
+      postContent: null == postContent
+          ? _value.postContent
+          : postContent // ignore: cast_nullable_to_non_nullable
+              as String,
+      postCommentCount: null == postCommentCount
+          ? _value.postCommentCount
+          : postCommentCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      postDate: null == postDate
+          ? _value.postDate
+          : postDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -190,38 +225,53 @@ class __$$PostDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PostDataImpl implements _PostData {
   const _$PostDataImpl(
-      {required this.profileImageUrl,
-      required this.postImageUrl,
-      required this.name,
-      required this.likeCount,
-      required this.commentCount,
-      required this.date,
-      required this.isLike,
-      required this.isFollow});
+      {@JsonKey(name: 'user_name') required this.userName,
+      @JsonKey(name: 'user_profile') required this.userProfile,
+      @JsonKey(name: 'is_following') required this.isFollowing,
+      @JsonKey(name: 'is_like') required this.isLike,
+      @JsonKey(name: 'is_saved') required this.isSaved,
+      required this.like,
+      @JsonKey(name: 'post_image') required this.postImage,
+      @JsonKey(name: 'post_content') required this.postContent,
+      @JsonKey(name: 'post_comment_count') required this.postCommentCount,
+      @JsonKey(name: 'post_date') required this.postDate});
 
   factory _$PostDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$PostDataImplFromJson(json);
 
   @override
-  final String profileImageUrl;
+  @JsonKey(name: 'user_name')
+  final String userName;
   @override
-  final String postImageUrl;
+  @JsonKey(name: 'user_profile')
+  final String userProfile;
   @override
-  final String name;
+  @JsonKey(name: 'is_following')
+  final bool isFollowing;
   @override
-  final String likeCount;
-  @override
-  final String commentCount;
-  @override
-  final String date;
-  @override
+  @JsonKey(name: 'is_like')
   final bool isLike;
   @override
-  final bool isFollow;
+  @JsonKey(name: 'is_saved')
+  final bool isSaved;
+  @override
+  final int like;
+  @override
+  @JsonKey(name: 'post_image')
+  final String postImage;
+  @override
+  @JsonKey(name: 'post_content')
+  final String postContent;
+  @override
+  @JsonKey(name: 'post_comment_count')
+  final int postCommentCount;
+  @override
+  @JsonKey(name: 'post_date')
+  final DateTime postDate;
 
   @override
   String toString() {
-    return 'PostData(profileImageUrl: $profileImageUrl, postImageUrl: $postImageUrl, name: $name, likeCount: $likeCount, commentCount: $commentCount, date: $date, isLike: $isLike, isFollow: $isFollow)';
+    return 'PostData(userName: $userName, userProfile: $userProfile, isFollowing: $isFollowing, isLike: $isLike, isSaved: $isSaved, like: $like, postImage: $postImage, postContent: $postContent, postCommentCount: $postCommentCount, postDate: $postDate)';
   }
 
   @override
@@ -229,25 +279,39 @@ class _$PostDataImpl implements _PostData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PostDataImpl &&
-            (identical(other.profileImageUrl, profileImageUrl) ||
-                other.profileImageUrl == profileImageUrl) &&
-            (identical(other.postImageUrl, postImageUrl) ||
-                other.postImageUrl == postImageUrl) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.likeCount, likeCount) ||
-                other.likeCount == likeCount) &&
-            (identical(other.commentCount, commentCount) ||
-                other.commentCount == commentCount) &&
-            (identical(other.date, date) || other.date == date) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.userProfile, userProfile) ||
+                other.userProfile == userProfile) &&
+            (identical(other.isFollowing, isFollowing) ||
+                other.isFollowing == isFollowing) &&
             (identical(other.isLike, isLike) || other.isLike == isLike) &&
-            (identical(other.isFollow, isFollow) ||
-                other.isFollow == isFollow));
+            (identical(other.isSaved, isSaved) || other.isSaved == isSaved) &&
+            (identical(other.like, like) || other.like == like) &&
+            (identical(other.postImage, postImage) ||
+                other.postImage == postImage) &&
+            (identical(other.postContent, postContent) ||
+                other.postContent == postContent) &&
+            (identical(other.postCommentCount, postCommentCount) ||
+                other.postCommentCount == postCommentCount) &&
+            (identical(other.postDate, postDate) ||
+                other.postDate == postDate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, profileImageUrl, postImageUrl,
-      name, likeCount, commentCount, date, isLike, isFollow);
+  int get hashCode => Object.hash(
+      runtimeType,
+      userName,
+      userProfile,
+      isFollowing,
+      isLike,
+      isSaved,
+      like,
+      postImage,
+      postContent,
+      postCommentCount,
+      postDate);
 
   @JsonKey(ignore: true)
   @override
@@ -265,34 +329,50 @@ class _$PostDataImpl implements _PostData {
 
 abstract class _PostData implements PostData {
   const factory _PostData(
-      {required final String profileImageUrl,
-      required final String postImageUrl,
-      required final String name,
-      required final String likeCount,
-      required final String commentCount,
-      required final String date,
-      required final bool isLike,
-      required final bool isFollow}) = _$PostDataImpl;
+      {@JsonKey(name: 'user_name') required final String userName,
+      @JsonKey(name: 'user_profile') required final String userProfile,
+      @JsonKey(name: 'is_following') required final bool isFollowing,
+      @JsonKey(name: 'is_like') required final bool isLike,
+      @JsonKey(name: 'is_saved') required final bool isSaved,
+      required final int like,
+      @JsonKey(name: 'post_image') required final String postImage,
+      @JsonKey(name: 'post_content') required final String postContent,
+      @JsonKey(name: 'post_comment_count') required final int postCommentCount,
+      @JsonKey(name: 'post_date')
+      required final DateTime postDate}) = _$PostDataImpl;
 
   factory _PostData.fromJson(Map<String, dynamic> json) =
       _$PostDataImpl.fromJson;
 
   @override
-  String get profileImageUrl;
+  @JsonKey(name: 'user_name')
+  String get userName;
   @override
-  String get postImageUrl;
+  @JsonKey(name: 'user_profile')
+  String get userProfile;
   @override
-  String get name;
+  @JsonKey(name: 'is_following')
+  bool get isFollowing;
   @override
-  String get likeCount;
-  @override
-  String get commentCount;
-  @override
-  String get date;
-  @override
+  @JsonKey(name: 'is_like')
   bool get isLike;
   @override
-  bool get isFollow;
+  @JsonKey(name: 'is_saved')
+  bool get isSaved;
+  @override
+  int get like;
+  @override
+  @JsonKey(name: 'post_image')
+  String get postImage;
+  @override
+  @JsonKey(name: 'post_content')
+  String get postContent;
+  @override
+  @JsonKey(name: 'post_comment_count')
+  int get postCommentCount;
+  @override
+  @JsonKey(name: 'post_date')
+  DateTime get postDate;
   @override
   @JsonKey(ignore: true)
   _$$PostDataImplCopyWith<_$PostDataImpl> get copyWith =>

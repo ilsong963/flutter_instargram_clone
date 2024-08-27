@@ -13,14 +13,3 @@ class StoryData with _$StoryData {
 
   factory StoryData.fromJson(Map<String, dynamic> json) => _$StoryDataFromJson(json);
 }
-
-
-@freezed
-class StoryListData with _$StoryListData {
-  const factory StoryListData({
-    @JsonKey(name: 'story_list')
-    required List<StoryData> storyDataList,
-  }) = _StoryListData;
-
-  factory StoryListData.fromJson(Map<String, dynamic> json) => _$StoryListDataFromJson(json);
-}

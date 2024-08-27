@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_instargram_clone/presentation/screen/home/post_list_view.dart';
-import 'package:flutter_instargram_clone/presentation/screen/home/story_list_view.dart';
+import 'package:flutter_instargram_clone/presentation/screen/home/post_view.dart';
+import 'package:flutter_instargram_clone/presentation/screen/home/story_view.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../provider/story_list_provider.dart';
+import '../../provider/post_provider.dart';
+import '../../provider/story_provider.dart';
 import 'home_app_bar.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -18,15 +19,16 @@ class HomeScreen extends ConsumerWidget {
           CupertinoSliverRefreshControl(
             onRefresh: () async {
               await Future.delayed(const Duration(seconds: 2));
-              ref.read(storyListProvider.notifier).reLoadStoryList();
+              ref.read(storyProvider.notifier).reLoadStoryList();
+              ref.read(postProvider.notifier).reLoadPostList();
             },
           ),
           const SliverToBoxAdapter(
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              StoryListView(),
-              PostListView(),
+              StoryView(),
+              PostView(),
             ],
           ))
         ]));
