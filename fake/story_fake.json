@@ -1,0 +1,25 @@
+{
+  "story_list": [
+
+      {
+        "id": "ffraine0",
+        "imageUrl": "http://dummyimage.com/70x70.png/ff4444/ffffff"
+      },
+      {
+        "id": "smordecai1",
+        "imageUrl": "http://dummyimage.com/70x70.png/ff4444/ffffff"
+      },
+      {
+        "id": "bklemenz2",
+        "imageUrl": "http://dummyimage.com/70x70.png/cc0000/ffffff"
+      },
+      {
+        "id": "dwiggam3",
+        "imageUrl": "http://dummyimage.com/70x70.png/cc0000/ffffff"
+      },
+      {
+        "id": "ghebbes4",
+        "imageUrl": "http://dummyimage.com/70x70.png/dddddd/000000"
+      }
+  ]
+}
