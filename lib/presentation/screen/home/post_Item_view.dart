@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class PostItemView extends StatelessWidget {
+class PostItemView extends ConsumerWidget {
   const PostItemView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
       Row(
         children: [
@@ -57,3 +58,4 @@ class PostItemView extends StatelessWidget {
     ]);
   }
 }
+

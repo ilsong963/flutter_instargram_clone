@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_instargram_clone/model/story_model.dart';
+
+import '../../../data/dto/story_list_data.dart';
+
 
 class StoryItemView extends StatelessWidget {
   const StoryItemView({super.key, required this.story});
 
-  final StoryModel story;
+  final StoryData story;
 
   @override
   Widget build(BuildContext context) {
