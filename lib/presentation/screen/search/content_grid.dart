@@ -1,30 +1,31 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_instargram_clone/presentation/provider/content_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class ContentGrid extends StatelessWidget {
+import 'gride_tile.dart';
+
+class ContentGrid extends ConsumerWidget {
   const ContentGrid({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 5,
-          mainAxisSpacing: 5,
-        ),
-        itemBuilder: (context, index) {
-          return Container(
-            color: Colors.grey,
-            height: 100,
-            width: 100,
-          );
-        },
-        itemCount: 25,
-      ),
-    );
+  Widget build(BuildContext context, WidgetRef ref) {
+    final contentList = ref.watch(contentProvider);
+
+    return  switch (contentList) {
+        AsyncData(:final value) =>  Expanded(child:    SingleChildScrollView(
+    scrollDirection: Axis.vertical,
+    child: StaggeredGrid.count(
+      crossAxisCount: 3,
+      mainAxisSpacing: 4,
+      crossAxisSpacing: 4,
+      children:
+          List.generate(value.length, (index) => ContentGridTile(contentData: value[index])),
+    ))),
+        AsyncError(:final error) => Text('Oops $error'),
+        _ => const CircularProgressIndicator(),
+      };
   }
 }
-
