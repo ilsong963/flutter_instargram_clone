@@ -1,10 +1,10 @@
 import 'dart:convert';
 
+
 import 'package:flutter/services.dart';
 import 'package:flutter_instargram_clone/data/dto/story_list_data.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 part 'story_provider.g.dart';
 
 @Riverpod(keepAlive: true)
@@ -24,8 +24,11 @@ class Story extends _$Story {
   }
 
   Future<void> reLoadStoryList() async {
-    List<StoryData> shuffledStoryList = List.from(state.value!)..shuffle();
-    state = AsyncData(_insertMyStory(shuffledStoryList));
+
+    List<StoryData> storyList = List.from(state.value!);
+    storyList.removeAt(0);
+    storyList.shuffle();
+    state = AsyncData(_insertMyStory(storyList));
   }
 
   List<StoryData> _insertMyStory(List<StoryData> storyList) {
